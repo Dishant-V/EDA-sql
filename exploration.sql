@@ -1,10 +1,6 @@
 -- EDA
 
--- Here we are jsut going to explore the data and find trends or patterns or anything interesting like outliers
 
--- normally when you start the EDA process you have some idea of what you're looking for
-
--- with this info we are just going to look around and see what we find!
 
 SELECT * 
 FROM world_layoffs.layoffs_staging2;
@@ -28,31 +24,10 @@ WHERE  percentage_laid_off IS NOT NULL;
 SELECT *
 FROM world_layoffs.layoffs_staging2
 WHERE  percentage_laid_off = 1;
--- these are mostly startups it looks like who all went out of business during this time
 
--- if we order by funcs_raised_millions we can see how big some of these companies were
-SELECT *
 FROM world_layoffs.layoffs_staging2
 WHERE  percentage_laid_off = 1
 ORDER BY funds_raised_millions DESC;
--- BritishVolt looks like an EV company, Quibi! I recognize that company - wow raised like 2 billion dollars and went under - ouch
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- SOMEWHAT TOUGHER AND MOSTLY USING GROUP BY--------------------------------------------------------------------------------------------------
 
 -- Companies with the biggest single Layoff
 
@@ -105,12 +80,6 @@ ORDER BY 2 DESC;
 
 
 
-
-
--- TOUGHER QUERIES------------------------------------------------------------------------------------------------------------------------------------
-
--- Earlier we looked at Companies with the most Layoffs. Now let's look at that per year. It's a little more difficult.
--- I want to look at 
 
 WITH Company_Year AS 
 (
